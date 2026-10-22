@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Container, PageHero } from "@/components/ui";
 import ContactForm from "@/components/ContactForm";
+import LendricIntake from "@/components/LendricIntake";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -12,13 +13,13 @@ export const metadata: Metadata = {
 };
 
 /**
- * Interim application page. Once the Lendric intake is live, set NEXT_PUBLIC_APPLY_URL
- * and every Apply Now button on the site will point there instead of this page.
+ * Application page – embeds the Lendric Intake widget. Every "Apply Now" on the site
+ * lands here (site.applyUrl). The ContactForm is only shown if the widget can't load.
  */
 export default function Apply() {
   return (
     <>
-      <PageHero eyebrow="Apply Now" title="Ready, set, go! Start your online finance application" intro="Tell us a little about what you need. A loan specialist will be in touch within one business day to get your application moving – no paperwork required to get started.">
+      <PageHero eyebrow="Apply Now" title="Ready, set, go! Start your online finance application" intro="Answer a few quick questions and we'll match you to lenders that fit – then a broker takes it from there. Takes about two minutes, no paperwork to get started.">
         <Image src="/assets/illustrations/step-4-apply-online.svg" alt="" width={360} height={280} className="w-full max-w-[360px]" priority />
       </PageHero>
       <section>
@@ -27,10 +28,10 @@ export default function Apply() {
             <h2 className="text-2xl">What happens next</h2>
             <ol className="mt-6 space-y-5">
               {[
-                ["Tell us what you need", "Home, refinance, investment, business, car or personal – and roughly how much."],
-                ["We call you", "A loan specialist confirms the details and asks a few questions about your situation."],
-                ["We find your match", "We compare thousands of products and come back with options that fit."],
-                ["Apply online", "Upload documents securely and track progress through to settlement."],
+                ["Answer a few questions", "What you're after, roughly how much, and a bit about your situation – two minutes."],
+                ["See your matches", "We check lender policy and show you options that fit, not just the cheapest headline rate."],
+                ["Book a call or continue online", "Pick a time with a broker, or keep going and upload documents securely."],
+                ["Settle", "We handle the lender, the paperwork and the chasing through to settlement."],
               ].map(([t, d], i) => (
                 <li key={t} className="flex gap-4">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-deep font-heading text-sm font-bold text-white">{i + 1}</span>
@@ -54,7 +55,7 @@ export default function Apply() {
             )}
             <h2 className="text-2xl">Start a new application</h2>
             <div className="mt-6">
-              <ContactForm subjectDefault="Home loan" />
+              <LendricIntake fallback={<ContactForm subjectDefault="Home loan" />} />
             </div>
           </div>
         </Container>

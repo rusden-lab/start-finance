@@ -82,8 +82,8 @@ export default function Home() {
               <p className="text-xs font-semibold text-muted">loan products compared</p>
             </div>
             <div className="absolute bottom-6 left-0 z-20 rounded-2xl bg-fuchsia px-4 py-3 text-white shadow-xl sm:-left-4">
-              <p className="font-heading text-lg font-extrabold leading-none">$300</p>
-              <p className="text-xs font-semibold text-white/90">settlement bonus</p>
+              <p className="font-heading text-lg font-extrabold leading-none">{site.promo.amount}</p>
+              <p className="text-xs font-semibold text-white/90">settlement bonus*</p>
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img

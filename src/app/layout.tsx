@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PromoBanner, { promoLive } from "@/components/PromoBanner";
 import { site } from "@/lib/site";
 
 const syne = localFont({
@@ -43,7 +44,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-AU" className={`${syne.variable} ${publicSans.variable}`}>
-      <body className="min-h-screen flex flex-col">
+      <body className={`min-h-screen flex flex-col ${promoLive() ? "promo-live" : ""}`}>
+        <PromoBanner />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

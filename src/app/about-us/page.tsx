@@ -68,7 +68,7 @@ export default function About() {
                 "100% online process, or in person at South Yarra",
                 "Dedicated loan specialist from enquiry to settlement",
                 "Help for low credit scores and self-employed borrowers",
-                "$300 settlement bonus on eligible loans",
+                "$1,000 settlement bonus on eligible loans that start online*",
               ].map((t) => (
                 <li key={t} className="flex gap-3">
                   <Image src="/assets/icons/deco-tick-pink.svg" alt="" width={20} height={20} />

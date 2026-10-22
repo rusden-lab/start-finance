@@ -222,6 +222,14 @@ h4 {
   text-decoration: underline;
 }
 
+/* Launch promo banner offsets */
+.promo-live header { top: 36px; }
+.promo-live main > section:first-child { padding-top: 108px; }
+@media (max-width: 640px) {
+  .promo-live header { top: 44px; }
+  .promo-live main > section:first-child { padding-top: 116px; }
+}
+
 @media print {
   header,
   footer,

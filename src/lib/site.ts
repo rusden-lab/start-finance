@@ -6,8 +6,8 @@ export const site = {
   aiUrl: process.env.NEXT_PUBLIC_AI_URL ?? "https://ai.startfinance.com.au",
   /** Where the Apply Now button sends people. Point this at the Lendric intake when ready. */
   applyUrl: process.env.NEXT_PUBLIC_APPLY_URL ?? "/apply",
-  phone: "1800 875 567",
-  phoneHref: "tel:1800875567",
+  phone: "1800 569 090",
+  phoneHref: "tel:1800569090",
   email: "info@startfinance.com.au",
   address: {
     line1: "11 Wilson Street",
@@ -17,6 +17,15 @@ export const site = {
     full: "11 Wilson Street, South Yarra VIC 3141",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=11+Wilson+Street+South+Yarra+VIC+3141",
+  },
+  /** Launch promotion – flip `active` to false (or let `endsOn` pass) to switch it off everywhere. */
+  promo: {
+    active: true,
+    amount: "$1,000",
+    headline: "Launch offer: $1,000 settlement bonus",
+    detail: "on eligible home, investment or refinance loans over $400k that start online and settle. First 20 only.",
+    endsOn: "2026-11-30", // ISO date, Melbourne time; banner auto-hides after this
+    termsAnchor: "/apply#promo-terms",
   },
   hours: [
     { day: "Monday to Friday", time: "9am – 5pm" },

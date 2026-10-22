@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact Us – South Yarra Mortgage Brokers",
   description:
-    "Contact Start Finance in South Yarra, Melbourne. Call 1800 875 567, email info@startfinance.com.au or send us a message about home loans, refinancing, car, business and personal loans.",
+    "Contact Start Finance in South Yarra, Melbourne. Call 1800 569 090, email info@startfinance.com.au or send us a message about home loans, refinancing, car, business and personal loans.",
   alternates: { canonical: "/contact-us" },
 };
 

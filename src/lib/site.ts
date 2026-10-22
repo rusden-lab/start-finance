@@ -2,10 +2,10 @@ export const site = {
   name: "Start Finance",
   legalName: "Start Finance Pty Ltd",
   tagline: "Start smart, Start Finance",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.startfinance.com.au",
-  aiUrl: process.env.NEXT_PUBLIC_AI_URL ?? "https://ai.startfinance.com.au",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.startfinance.com.au",
+  aiUrl: process.env.NEXT_PUBLIC_AI_URL || "https://ai.startfinance.com.au",
   /** Where the Apply Now button sends people. Point this at the Lendric intake when ready. */
-  applyUrl: process.env.NEXT_PUBLIC_APPLY_URL ?? "/apply",
+  applyUrl: process.env.NEXT_PUBLIC_APPLY_URL || "/apply",
   phone: "1800 569 090",
   phoneHref: "tel:1800569090",
   email: "info@startfinance.com.au",

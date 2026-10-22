@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const WIDGET_SRC = process.env.NEXT_PUBLIC_LENDRIC_WIDGET_SRC ?? "https://www.lendric.com.au/intake-widget.js";
-const WIDGET_KEY = process.env.NEXT_PUBLIC_LENDRIC_WIDGET_KEY ?? "lk_WQ8N8QBd6RkAMX11-Nqy6_e7";
+const WIDGET_SRC = process.env.NEXT_PUBLIC_LENDRIC_WIDGET_SRC || "https://www.lendric.com.au/intake-widget.js";
+const WIDGET_KEY = process.env.NEXT_PUBLIC_LENDRIC_WIDGET_KEY || "lk_WQ8N8QBd6RkAMX11-Nqy6_e7";
 
 /**
  * Lendric Intake widget (light theme) – the question flow, matching and lead capture

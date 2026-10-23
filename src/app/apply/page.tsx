@@ -30,7 +30,7 @@ export default function Apply() {
               {[
                 ["Answer a few questions", "What you're after, roughly how much, and a bit about your situation – two minutes."],
                 ["See your matches", "We check lender policy and show you options that fit, not just the cheapest headline rate."],
-                ["Book a call or continue online", "Pick a time with a broker, or keep going and upload documents securely."],
+                ["Talk to a broker or continue online", "Request a call back below, or keep going and upload documents securely."],
                 ["Settle", "We handle the lender, the paperwork and the chasing through to settlement."],
               ].map(([t, d], i) => (
                 <li key={t} className="flex gap-4">
@@ -43,7 +43,8 @@ export default function Apply() {
               ))}
             </ol>
             <p className="mt-8 text-sm text-ink-soft">
-              Prefer to talk? Call <a href={site.phoneHref} className="font-semibold text-purple">{site.phone}</a>, Monday to Friday 9am–5pm.
+              Prefer to talk first? <a href="#callback" className="font-semibold text-purple">Request a call back</a> or call{" "}
+              <a href={site.phoneHref} className="font-semibold text-purple">{site.phone}</a>, Monday to Friday 9am–5pm.
             </p>
           </div>
           <div className="card p-6 sm:p-8">
@@ -56,6 +57,27 @@ export default function Apply() {
             <h2 className="text-2xl">Start a new application</h2>
             <div className="mt-6">
               <LendricIntake fallback={<ContactForm subjectDefault="Home loan" />} />
+            </div>
+          </div>
+        </Container>
+      </section>
+      <section id="callback" className="scroll-mt-28 bg-pale/50">
+        <Container className="grid gap-10 py-16 md:grid-cols-[1fr_1.3fr] md:py-20">
+          <div>
+            <h2 className="text-2xl">Rather talk it through first?</h2>
+            <p className="mt-4 text-ink-soft">
+              Leave your number and a broker – not a call centre – will ring you back within one business day. No obligation, and nothing is lodged with a lender until you say so.
+            </p>
+            <ul className="mt-6 space-y-3 text-sm text-ink-soft">
+              <li>• A 10–15 minute chat about what you&apos;re trying to do</li>
+              <li>• A straight answer on whether it&apos;s doable and roughly what it would cost</li>
+              <li>• Then you decide whether to start the online application</li>
+            </ul>
+          </div>
+          <div className="card p-6 sm:p-8">
+            <h2 className="text-2xl">Request a call back</h2>
+            <div className="mt-6">
+              <ContactForm mode="callback" />
             </div>
           </div>
         </Container>

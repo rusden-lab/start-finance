@@ -12,6 +12,8 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dark = pathname === "/";
+  const onApply = pathname === "/apply";
+  const cta = onApply ? { href: "/apply#callback", label: "Request a call back" } : { href: site.applyUrl, label: "Apply Now" };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -67,8 +69,8 @@ export default function Header() {
 
         <div className="hidden items-center gap-3 md:flex">
           <ModeToggle dark={dark} />
-          <Link href={site.applyUrl} className="btn btn-primary !py-2.5 !px-5 text-sm">
-            Apply Now
+          <Link href={cta.href} className="btn btn-primary !py-2.5 !px-5 text-sm">
+            {cta.label}
           </Link>
         </div>
 
@@ -106,8 +108,8 @@ export default function Header() {
             ))}
             <div className="flex items-center justify-between py-4">
               <ModeToggle dark={false} />
-              <Link href={site.applyUrl} className="btn btn-primary !py-2.5 !px-5 text-sm">
-                Apply Now
+              <Link href={cta.href} className="btn btn-primary !py-2.5 !px-5 text-sm">
+                {cta.label}
               </Link>
             </div>
           </nav>

@@ -112,8 +112,8 @@ export default function Home() {
                   <Image src={l.icon} alt="" width={22} height={22} />
                 </span>
                 <h3 className="mt-4 text-[15px]">{l.name}</h3>
-                <p className="mt-1 text-xs text-muted">{l.blurb}</p>
-                <Link href={site.applyUrl} className="btn btn-primary mt-4 !px-4 !py-2 text-xs">
+                <p className="mb-4 mt-1 text-xs text-muted">{l.blurb}</p>
+                <Link href={site.applyUrl} className="btn btn-primary mt-auto !px-4 !py-2 text-xs">
                   Apply now
                 </Link>
               </div>

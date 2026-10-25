@@ -12,7 +12,7 @@ const WIDGET_KEY = process.env.NEXT_PUBLIC_LENDRIC_WIDGET_KEY || "lk_WQ8N8QBd6Rk
  */
 export default function LendricIntake({ fallback }: { fallback: React.ReactNode }) {
   const host = useRef<HTMLDivElement>(null);
-  const [state, setState] = useState<"loading" | "ready" | "failed">("loading");
+  const [state, setState] = useState<"loading" | "slow" | "ready" | "failed">("loading");
 
   useEffect(() => {
     const el = host.current;
@@ -27,15 +27,16 @@ export default function LendricIntake({ fallback }: { fallback: React.ReactNode 
     s.onerror = () => setState("failed");
     el.appendChild(s);
 
-    // If the widget hasn't rendered anything within 8s (blocked origin, outage), show the fallback form.
-    const t = setTimeout(() => {
-      const mounted = document.querySelector("#lendric-intake")?.childElementCount ?? 0;
-      setState(mounted > 0 ? "ready" : "failed");
-    }, 8000);
+    // Lendric's first load can take a while on a cold start (script → flow → resume saved lead).
+    // Show a "still loading" note after 6s and only fall back to the plain form after 30s.
+    const isMounted = () => (document.querySelector("#lendric-intake")?.childElementCount ?? 0) > 0;
+    const slow = setTimeout(() => setState((s) => (s === "loading" ? "slow" : s)), 6000);
+    const t = setTimeout(() => setState(isMounted() ? "ready" : "failed"), 30000);
     const obs = new MutationObserver(() => {
-      if ((document.querySelector("#lendric-intake")?.childElementCount ?? 0) > 0) {
+      if (isMounted()) {
         setState("ready");
         clearTimeout(t);
+        clearTimeout(slow);
         obs.disconnect();
       }
     });
@@ -43,6 +44,7 @@ export default function LendricIntake({ fallback }: { fallback: React.ReactNode 
     if (target) obs.observe(target, { childList: true });
     return () => {
       clearTimeout(t);
+      clearTimeout(slow);
       obs.disconnect();
     };
   }, []);
@@ -68,14 +70,20 @@ export default function LendricIntake({ fallback }: { fallback: React.ReactNode 
           } as React.CSSProperties
         }
       />
-      {state === "loading" && (
-        <p className="py-10 text-center text-sm text-muted">Loading your application…</p>
+      {(state === "loading" || state === "slow") && (
+        <div className="py-10 text-center text-sm text-muted">
+          <span className="mx-auto mb-3 block h-6 w-6 animate-spin rounded-full border-2 border-lilac border-t-purple" aria-hidden="true" />
+          {state === "slow" ? "Still loading – this can take a few seconds the first time…" : "Loading your application…"}
+        </div>
       )}
       {state === "failed" && (
         <div>
-          <p className="mb-5 rounded-xl bg-lilac p-4 text-sm text-ink-soft">
-            Our online application is taking a moment to load. Leave your details below and a broker will get you started.
-          </p>
+          <div className="mb-5 rounded-xl bg-lilac p-4 text-sm text-ink-soft">
+            <p>Our online application didn&apos;t load. You can try again, or leave your details below and a broker will get you started.</p>
+            <button type="button" onClick={() => window.location.reload()} className="btn btn-primary mt-3 !px-4 !py-2 text-xs">
+              Try again
+            </button>
+          </div>
           {fallback}
         </div>
       )}

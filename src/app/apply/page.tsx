@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Apply Now – Start Your Online Finance Application",
   description:
-    "Ready, set, go! Start your online finance application with Start Finance. Tell us what you need and a loan specialist will take it from there.",
+    "Start your online finance application with Start Finance in about a minute. Tell us what you need and a broker will call you back to take it from there.",
   alternates: { canonical: "/apply" },
 };
 
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function Apply() {
   return (
     <>
-      <PageHero eyebrow="Apply Now" title="Ready, set, go! Start your online finance application" intro="Answer a few quick questions and we'll match you to lenders that fit – then a broker takes it from there. Takes about two minutes, no paperwork to get started.">
+      <PageHero eyebrow="Apply Now" title="Ready, set, go! Start your online finance application" intro="Tell us what you're after and a bit about your situation, leave your details, and a broker will call you back within one business day. Takes about a minute, no paperwork to get started.">
         <Image src="/assets/illustrations/step-4-apply-online.svg" alt="" width={360} height={280} className="w-full max-w-[360px]" priority />
       </PageHero>
       <section>
@@ -28,9 +28,9 @@ export default function Apply() {
             <h2 className="text-2xl">What happens next</h2>
             <ol className="mt-6 space-y-5">
               {[
-                ["Answer a few questions", "What you're after, roughly how much, and a bit about your situation – two minutes."],
-                ["See your matches", "We check lender policy and show you options that fit, not just the cheapest headline rate."],
-                ["Talk to a broker or continue online", "Request a call back below, or keep going and upload documents securely."],
+                ["Answer four quick questions", "What you're after, where you're up to, a price range and how you earn – about a minute."],
+                ["Leave your details", "First name, mobile and email. Nothing is lodged with a lender until you say so."],
+                ["A broker calls you back", "Within one business day, to talk through your options and what you'll need – then we start the application proper."],
                 ["Settle", "We handle the lender, the paperwork and the chasing through to settlement."],
               ].map(([t, d], i) => (
                 <li key={t} className="flex gap-4">
@@ -54,7 +54,7 @@ export default function Apply() {
                 <p className="mt-1 text-ink-soft">{site.promo.detail}</p>
               </div>
             )}
-            <h2 className="text-2xl">Start a new application</h2>
+            <h2 className="text-2xl">Start your application</h2>
             <div className="mt-6">
               <LendricIntake fallback={<ContactForm subjectDefault="Home loan" />} />
             </div>

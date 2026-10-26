@@ -6,8 +6,9 @@ const WIDGET_SRC = process.env.NEXT_PUBLIC_LENDRIC_WIDGET_SRC || "https://www.le
 const WIDGET_KEY = process.env.NEXT_PUBLIC_LENDRIC_WIDGET_KEY || "lk_WQ8N8QBd6RkAMX11-Nqy6_e7";
 
 /**
- * Lendric Intake widget (light theme) – the question flow, matching and lead capture
- * run inside Lendric. The widget key is public by design; rotate it in Lendric if needed.
+ * Lendric Intake widget (light theme, intake-only mode) – a short application with no
+ * product matching: goal, stage, price range, income type, then contact details. The lead
+ * is flagged for a broker call inside Lendric. The AI site uses the same widget in match mode. The widget key is public by design; rotate it in Lendric if needed.
  * Lendric must list this site's origin under the key's allowed origins.
  */
 export default function LendricIntake({ fallback }: { fallback: React.ReactNode }) {
@@ -23,6 +24,7 @@ export default function LendricIntake({ fallback }: { fallback: React.ReactNode 
     s.dataset.key = WIDGET_KEY;
     s.dataset.target = "#lendric-intake";
     s.dataset.theme = "light";
+    s.dataset.mode = "intake"; // plain application – no product match on this site; a broker calls back
     s.dataset.accent = "#B329FF";
     s.onerror = () => setState("failed");
     el.appendChild(s);

@@ -85,9 +85,9 @@ export default function Apply() {
       {site.promo.active && (
         <section id="promo-terms" className="scroll-mt-28 border-t border-line">
           <Container className="py-12">
-            <h2 className="text-xl">Settlement bonus – terms and conditions</h2>
+            <h2 className="text-xl">AI launch offer – $1,000 settlement bonus terms and conditions</h2>
             <ul className="mt-4 max-w-3xl list-disc space-y-2 pl-5 text-sm text-ink-soft">
-              <li>A {site.promo.amount} settlement bonus is payable on eligible home, investment and refinance loans where the application is started through this website on or before {new Date(site.promo.endsOn + "T00:00:00").toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })} and the loan subsequently settles.</li>
+              <li>A {site.promo.amount} settlement bonus is payable on eligible home, investment and refinance loans where the application is started online through startfinance.com.au or ai.startfinance.com.au on or before {new Date(site.promo.endsOn + "T00:00:00").toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })} and the loan subsequently settles.</li>
               <li>Minimum eligible loan amount is $400,000. One bonus per settled loan, paid to the primary borrower&apos;s nominated account within 30 days of settlement.</li>
               <li>The offer is limited to the first 20 eligible loans to settle. Once the cap is reached the offer closes and this page will be updated.</li>
               <li>Not available on personal, car or business loans, construction loans, or loans with a lender that pays no broker commission.</li>

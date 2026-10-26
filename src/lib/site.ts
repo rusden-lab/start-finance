@@ -22,8 +22,8 @@ export const site = {
   promo: {
     active: true,
     amount: "$1,000",
-    headline: "Launch offer: $1,000 settlement bonus",
-    detail: "on eligible home, investment or refinance loans over $400k that start online and settle. First 20 only.",
+    headline: "AI launch offer: $1,000 settlement bonus",
+    detail: "when an eligible home, investment or refinance loan over $400k starts online and settles. First 20 only.",
     endsOn: "2026-11-30", // ISO date, Melbourne time; banner auto-hides after this
     termsAnchor: "/apply#promo-terms",
   },

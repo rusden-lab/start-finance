@@ -44,7 +44,7 @@ export const features = [
   },
   {
     title: "Get cash back",
-    text: "$1,000 settlement bonus on eligible loans that start online. By leveraging technology we've kept costs down – and we pass the savings back to you.*",
+    text: "AI launch offer: a $1,000 settlement bonus when an eligible loan that starts online settles. By leveraging technology we've kept costs down – and we pass the savings back to you.*",
     img: "/assets/photos/feature-cashback.jpg",
   },
 ];

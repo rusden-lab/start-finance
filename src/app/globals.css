@@ -4,25 +4,27 @@
   --color-ink: #231f20;
   --color-ink-soft: #4a4548;
   --color-muted: #6f6a72;
-  --color-deep: #4e0389;
+  /* Direction A (Nov 2026): indigo-led. `purple` is the working colour and now resolves to Electric Indigo;
+     `fuchsia` is reserved for the brand mark and the one hero highlight. Tints are cool lavender, not pink. */
+  --color-deep: #15123a;
   --color-violet: #8629ff;
   --color-indigo: #5429ff;
-  --color-purple: #b329ff;
+  --color-purple: #5429ff;
   --color-fuchsia: #ff29e7;
   --color-coral: #ff307a;
   --color-green: #52e21f;
   --color-gold: #edaf14;
-  --color-pale: #eee0ff;
-  --color-pinktint: #ffeafd;
-  --color-lilac: #f6f0ff;
-  --color-line: #e6dbf5;
+  --color-pale: #e6e3ff;
+  --color-pinktint: #f3f2ff;
+  --color-lilac: #f5f4ff;
+  --color-line: #e2e0f5;
 
   --font-heading: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
 
   --radius-card: 16px;
-  --shadow-card: 0 10px 30px -12px rgba(78, 3, 137, 0.18);
-  --shadow-cta: 0 10px 24px -8px rgba(255, 41, 231, 0.55);
+  --shadow-card: 0 10px 30px -12px rgba(21, 18, 58, 0.16);
+  --shadow-cta: 0 10px 24px -8px rgba(84, 41, 255, 0.45);
 }
 
 :root {
@@ -60,15 +62,16 @@ h4 {
 }
 
 .grad-purple {
-  background: linear-gradient(135deg, #8629ff 0%, #b329ff 55%, #c93dff 100%);
+  background: linear-gradient(135deg, #3a1bc2 0%, #5429ff 55%, #6d4cff 100%);
 }
 
+/* Home hero: light lavender with a faint indigo wash at the top */
 .grad-hero {
-  background: radial-gradient(120% 90% at 50% 0%, #c35bff 0%, #8e2bff 42%, #6a19d6 100%);
+  background: radial-gradient(120% 90% at 50% 0%, #e6e3ff 0%, #f3f2ff 55%, #ffffff 100%);
 }
 
 .grad-text {
-  background: linear-gradient(135deg, #8629ff, #ff29e7);
+  background: linear-gradient(135deg, #5429ff, #8629ff);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -94,12 +97,12 @@ h4 {
   transform: translateY(-1px);
 }
 .btn-primary {
-  background: var(--color-fuchsia);
+  background: var(--color-indigo);
   color: #fff;
   box-shadow: var(--shadow-cta);
 }
 .btn-primary:hover {
-  background: #ff46ea;
+  background: #4420e0;
 }
 .btn-outline {
   border: 2px solid var(--color-purple);
@@ -136,7 +139,7 @@ h4 {
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  background: var(--color-fuchsia);
+  background: var(--color-indigo);
 }
 
 /* Slanted "S" brand stripe used behind hero / calculator sections */
@@ -156,6 +159,9 @@ h4 {
   transform: translateX(-50%) skewX(-18deg);
   background: rgba(255, 255, 255, 0.08);
 }
+.brand-stripe.on-light::before {
+  background: rgba(84, 41, 255, 0.06);
+}
 
 /* Forms */
 .field {
@@ -171,7 +177,7 @@ h4 {
 .field:focus {
   outline: none;
   border-color: var(--color-purple);
-  box-shadow: 0 0 0 3px rgba(179, 41, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(84, 41, 255, 0.15);
 }
 .label {
   display: block;

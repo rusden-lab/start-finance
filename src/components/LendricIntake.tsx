@@ -25,7 +25,9 @@ export default function LendricIntake({ fallback }: { fallback: React.ReactNode 
     s.dataset.target = "#lendric-intake";
     s.dataset.theme = "light";
     s.dataset.mode = "intake"; // plain application – no product match on this site; a broker calls back
-    s.dataset.accent = "#B329FF";
+    s.dataset.talkLabel = "Prefer to talk? Request a call back";
+    s.dataset.talkHref = "#callback";
+    s.dataset.accent = "#5429FF";
     s.onerror = () => setState("failed");
     el.appendChild(s);
 
@@ -58,14 +60,14 @@ export default function LendricIntake({ fallback }: { fallback: React.ReactNode 
         data-lendric-intake
         style={
           {
-            "--li-accent": "#B329FF",
-            "--li-accent2": "#FF29E7",
+            "--li-accent": "#5429FF",
+            "--li-accent2": "#8629FF",
             "--li-btn-text": "#fff",
             "--li-text": "#231f20",
             "--li-muted": "#6f6a72",
-            "--li-border": "#e6dbf5",
-            "--li-card": "#f6f0ff",
-            "--li-card-hover": "#eee0ff",
+            "--li-border": "#e2e0f5",
+            "--li-card": "#f3f2ff",
+            "--li-card-hover": "#e6e3ff",
             "--li-input": "#ffffff",
             "--li-radius": "12px",
             "--li-font": "var(--font-body)",

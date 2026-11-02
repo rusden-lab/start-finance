@@ -10,7 +10,7 @@ const Social = ({ href, label, path }: { href: string; label: string; path: stri
     target="_blank"
     rel="noopener noreferrer"
     aria-label={label}
-    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-fuchsia"
+    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-indigo"
   >
     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
       <path d={path} />
@@ -39,18 +39,18 @@ export default function Footer() {
         <div>
           <h4 className="mb-4 text-base">Start Finance</h4>
           <ul className="space-y-2.5 text-sm text-white/80">
-            <li><Link href="/about-us" className="hover:text-fuchsia">About</Link></li>
-            <li><Link href="/calculators" className="hover:text-fuchsia">Calculators</Link></li>
-            <li><Link href="/blog" className="hover:text-fuchsia">Blog</Link></li>
-            <li><Link href="/faq" className="hover:text-fuchsia">FAQ</Link></li>
-            <li><Link href="/contact-us" className="hover:text-fuchsia">Contact Us</Link></li>
-            <li><Link href={site.applyUrl} className="hover:text-fuchsia">Apply Now</Link></li>
+            <li><Link href="/about-us" className="hover:text-pale">About</Link></li>
+            <li><Link href="/calculators" className="hover:text-pale">Calculators</Link></li>
+            <li><Link href="/blog" className="hover:text-pale">Blog</Link></li>
+            <li><Link href="/faq" className="hover:text-pale">FAQ</Link></li>
+            <li><Link href="/contact-us" className="hover:text-pale">Contact Us</Link></li>
+            <li><Link href={site.applyUrl} className="hover:text-pale">Apply Now</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="mb-4 text-base">Find Us</h4>
-          <a href={site.address.mapsUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-white/80 hover:text-fuchsia">
+          <a href={site.address.mapsUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-white/80 hover:text-pale">
             {site.address.line1},<br />
             {site.address.suburb} {site.address.state} {site.address.postcode}
           </a>
@@ -59,8 +59,8 @@ export default function Footer() {
         <div>
           <h4 className="mb-4 text-base">Contact Us</h4>
           <ul className="space-y-2.5 text-sm text-white/80">
-            <li><a href={site.phoneHref} className="hover:text-fuchsia">{site.phone}</a></li>
-            <li><a href={`mailto:${site.email}`} className="hover:text-fuchsia">{site.email}</a></li>
+            <li><a href={site.phoneHref} className="hover:text-pale">{site.phone}</a></li>
+            <li><a href={`mailto:${site.email}`} className="hover:text-pale">{site.email}</a></li>
             <li className="pt-2 text-white/60">Mon–Fri 9am–5pm AEST</li>
           </ul>
         </div>

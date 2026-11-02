@@ -135,7 +135,7 @@ export function Bars({ a, b, labelA, labelB }: { a: number; b: number; labelA: s
     <div className="mt-5 space-y-3">
       {[
         [labelA, a, "bg-white"],
-        [labelB, b, "bg-fuchsia"],
+        [labelB, b, "bg-violet"],
       ].map(([l, v, c]) => (
         <div key={l as string}>
           <div className="mb-1 flex justify-between text-xs text-white/80">

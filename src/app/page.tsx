@@ -23,25 +23,25 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden grad-hero pt-[72px] text-white">
-        <div className="brand-stripe" />
-        <Image src="/assets/icons/deco-coin-dollar.svg" alt="" width={44} height={44} className="absolute left-[6%] top-[28%] hidden opacity-90 lg:block" />
+      <section className="relative overflow-hidden grad-hero pt-[72px] text-ink">
+        <div className="brand-stripe on-light" />
+        <Image src="/assets/icons/deco-coin-dollar.svg" alt="" width={44} height={44} className="absolute left-[2%] top-[16%] hidden opacity-90 xl:block" />
         <Image src="/assets/icons/deco-coin-tilted.svg" alt="" width={36} height={36} className="absolute right-[8%] top-[22%] hidden opacity-90 lg:block" />
         <Image src="/assets/icons/deco-coin-squiggle.svg" alt="" width={40} height={40} className="absolute left-[12%] bottom-[16%] hidden opacity-80 lg:block" />
 
         <Container className="relative grid items-center gap-10 py-16 md:grid-cols-[1.15fr_1fr] md:py-24 lg:py-28">
           <div>
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em]">
-              <span className="h-2 w-2 rounded-full bg-fuchsia" /> Start smart, Start Finance
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-pale px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-deep">
+              <span className="h-2 w-2 rounded-full bg-indigo" /> Start smart, Start Finance
             </p>
             <h1 className="display text-4xl leading-[1.02] sm:text-5xl lg:text-[64px]">
               The loan you want.
               <br />
-              <span className="text-pinktint">Without the bank</span>
+              <span className="text-indigo">Without the bank</span>
               <br />
               runaround.
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-white/85">
+            <p className="mt-6 max-w-xl text-lg text-ink-soft">
               Melbourne mortgage brokers with thousands of loan products from 40+ lenders. We find the right one,
               handle the paperwork and keep you in the loop – 100% online, or in person if you prefer.
             </p>
@@ -49,11 +49,11 @@ export default function Home() {
               <Link href={site.applyUrl} className="btn btn-primary text-base">
                 Apply Now
               </Link>
-              <Link href="/calculators/borrowing-power" className="btn btn-white text-base">
+              <Link href="/calculators/borrowing-power" className="btn btn-outline text-base">
                 How much can I borrow?
               </Link>
             </div>
-            <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-white/90">
+            <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-ink-soft">
               {["Fast online platform", "Boost low credit scores", "Thousands of loan products"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-green text-deep">
@@ -67,7 +67,7 @@ export default function Home() {
 
           {/* Hero visual: real person + floating proof cards (static, decorative) */}
           <div className="relative mx-auto w-full max-w-[460px]">
-            <div className="absolute inset-x-8 bottom-0 top-10 rounded-[32px] bg-white/10 backdrop-blur-sm" />
+            <div className="absolute inset-x-8 bottom-0 top-10 rounded-[32px] bg-indigo/10 backdrop-blur-sm" />
             <div className="absolute -left-2 top-6 z-20 rounded-2xl bg-white px-4 py-3 text-ink shadow-xl sm:-left-6">
               <p className="text-[11px] font-semibold uppercase tracking-wider text-muted">Status</p>
               <p className="flex items-center gap-2 font-heading text-sm font-bold">
@@ -89,7 +89,7 @@ export default function Home() {
             <img
               src="/assets/photos/cta-person-with-phone.webp"
               alt="Customer checking their loan approval on their phone"
-              className="relative z-10 mx-auto max-h-[520px] w-auto drop-shadow-[0_30px_40px_rgba(30,0,70,0.45)]"
+              className="relative z-10 mx-auto max-h-[520px] w-auto drop-shadow-[0_30px_40px_rgba(21,18,58,0.28)]"
               fetchPriority="high"
             />
           </div>

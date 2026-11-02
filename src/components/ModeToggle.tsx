@@ -17,7 +17,7 @@ export default function ModeToggle({ dark }: { dark: boolean }) {
       </span>
       <a
         href={site.aiUrl}
-        className="rounded-full px-3 py-1.5 transition-colors hover:text-fuchsia"
+        className="rounded-full px-3 py-1.5 transition-colors hover:text-purple"
         title="Switch to AI mode"
       >
         AI mode ✦

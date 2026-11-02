@@ -11,7 +11,7 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const dark = pathname === "/";
+  const dark = false; // header is light on every page (Direction A, Nov 2026)
   const onApply = pathname === "/apply";
   const cta = onApply ? { href: "/apply#callback", label: "Request a call back" } : { href: site.applyUrl, label: "Apply Now" };
 
@@ -58,7 +58,7 @@ export default function Header() {
                 key={n.href}
                 href={n.href}
                 className={`text-[15px] font-medium transition-colors ${
-                  active ? "text-fuchsia" : dark ? "text-white/90 hover:text-white" : "text-ink-soft hover:text-purple"
+                  active ? "text-purple" : dark ? "text-white/90 hover:text-white" : "text-ink-soft hover:text-purple"
                 }`}
               >
                 {n.label}

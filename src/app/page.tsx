@@ -25,35 +25,35 @@ export default function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden grad-hero pt-[72px] text-ink">
         <div className="brand-stripe on-light" />
-        <Image src="/assets/icons/deco-coin-dollar.svg" alt="" width={44} height={44} className="absolute left-[2%] top-[16%] hidden opacity-90 xl:block" />
-        <Image src="/assets/icons/deco-coin-tilted.svg" alt="" width={36} height={36} className="absolute right-[8%] top-[22%] hidden opacity-90 lg:block" />
+        <Image src="/assets/icons/deco-coin-dollar.svg" alt="" width={44} height={44} data-parallax className="absolute left-[2%] top-[16%] hidden opacity-90 xl:block" />
+        <Image src="/assets/icons/deco-coin-tilted.svg" alt="" width={36} height={36} data-parallax className="absolute right-[8%] top-[22%] hidden opacity-90 lg:block" />
         <Image src="/assets/icons/deco-coin-squiggle.svg" alt="" width={40} height={40} className="absolute left-[12%] bottom-[16%] hidden opacity-80 lg:block" />
 
         <Container className="relative grid items-center gap-10 py-16 md:grid-cols-[1.15fr_1fr] md:py-24 lg:py-28">
           <div>
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-pale px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-deep">
+            <p data-hero-item className="mb-5 inline-flex items-center gap-2 rounded-full bg-pale px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-deep">
               <span className="h-2 w-2 rounded-full bg-indigo" /> Start smart, Start Finance
             </p>
-            <h1 className="display text-4xl leading-[1.02] sm:text-5xl lg:text-[64px]">
+            <h1 data-hero-item className="display text-4xl leading-[1.02] sm:text-5xl lg:text-[64px]">
               The loan you want.
               <br />
               <span className="text-indigo">Without the bank</span>
               <br />
               runaround.
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-ink-soft">
+            <p data-hero-item className="mt-6 max-w-xl text-lg text-ink-soft">
               Melbourne mortgage brokers with thousands of loan products from 40+ lenders. We find the right one,
               handle the paperwork and keep you in the loop – 100% online, or in person if you prefer.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href={site.applyUrl} className="btn btn-primary text-base">
+            <div data-hero-item className="mt-8 flex flex-wrap gap-3">
+              <Link href={site.applyUrl} data-coins className="btn btn-primary text-base">
                 Apply Now
               </Link>
               <Link href="/calculators/borrowing-power" className="btn btn-outline text-base">
                 How much can I borrow?
               </Link>
             </div>
-            <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-ink-soft">
+            <ul data-hero-item className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-ink-soft">
               {["Fast online platform", "Boost low credit scores", "Thousands of loan products"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-green text-deep">
@@ -66,7 +66,7 @@ export default function Home() {
           </div>
 
           {/* Hero visual: real person + floating proof cards (static, decorative) */}
-          <div className="relative mx-auto w-full max-w-[460px]">
+          <div data-hero-visual className="relative mx-auto w-full max-w-[460px]">
             <div className="absolute inset-x-8 bottom-0 top-10 rounded-[32px] bg-indigo/10 backdrop-blur-sm" />
             <div className="absolute -left-2 top-6 z-20 rounded-2xl bg-white px-4 py-3 text-ink shadow-xl sm:-left-6">
               <p className="text-[11px] font-semibold uppercase tracking-wider text-muted">Status</p>
@@ -78,7 +78,7 @@ export default function Home() {
               </p>
             </div>
             <div className="absolute -right-2 top-[38%] z-20 rounded-2xl bg-white px-4 py-3 text-ink shadow-xl sm:-right-6">
-              <p className="font-heading text-2xl font-extrabold leading-none text-purple">5,000+</p>
+              <p data-count className="font-heading text-2xl font-extrabold leading-none text-purple">5,000+</p>
               <p className="text-xs font-semibold text-muted">loan products compared</p>
             </div>
             <div className="absolute bottom-6 left-0 z-20 rounded-2xl bg-fuchsia px-4 py-3 text-white shadow-xl sm:-left-4">
@@ -107,7 +107,7 @@ export default function Home() {
           </div>
           <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
             {loanTypes.map((l) => (
-              <div key={l.name} className="card flex flex-col p-5">
+              <div key={l.name} data-reveal className="card flex flex-col p-5">
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-pale">
                   <Image src={l.icon} alt="" width={22} height={22} />
                 </span>
@@ -139,7 +139,7 @@ export default function Home() {
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {steps.map((s) => (
-              <div key={s.n} className="rounded-2xl bg-pinktint p-7 text-center">
+              <div key={s.n} data-reveal className="rounded-2xl bg-pinktint p-7 text-center">
                 <Image src={s.img} alt="" width={180} height={140} className="mx-auto h-[140px] w-auto" />
                 <h3 className="mt-5 text-lg">Step {s.n}</h3>
                 <p className="mt-2 text-sm text-ink-soft">{s.text}</p>
@@ -194,7 +194,7 @@ export default function Home() {
           </div>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((f) => (
-              <div key={f.title}>
+              <div key={f.title} data-reveal>
                 <div className="overflow-hidden rounded-2xl">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={f.img} alt="" className="aspect-[4/3] w-full object-cover grayscale transition duration-300 hover:grayscale-0" loading="lazy" />

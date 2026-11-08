@@ -104,6 +104,23 @@ h4 {
 .btn-primary:hover {
   background: #4420e0;
 }
+/* GSAP gradient sweep – Motion.tsx adds .btn-sweep and tweens --sweep from -120% to 120% on hover */
+.btn-sweep {
+  position: relative;
+  overflow: hidden;
+  --sweep: -120%;
+}
+.btn-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.28) 50%, transparent 65%);
+  transform: translateX(var(--sweep));
+  pointer-events: none;
+}
+.btn-arrow {
+  display: inline-block;
+}
 .btn-outline {
   border: 2px solid var(--color-purple);
   color: var(--color-purple);

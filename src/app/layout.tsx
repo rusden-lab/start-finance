@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PromoBanner, { promoLive } from "@/components/PromoBanner";
+import Motion from "@/components/Motion";
 import { site } from "@/lib/site";
 
 const syne = localFont({
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Motion />
       </body>
     </html>
   );

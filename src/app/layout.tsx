@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-AU" className={`${syne.variable} ${publicSans.variable}`}>
+    <html lang="en-AU" data-scroll-behavior="smooth" className={`${syne.variable} ${publicSans.variable}`}>
       <body className={`min-h-screen flex flex-col ${promoLive() ? "promo-live" : ""}`}>
         <PromoBanner />
         <Header />

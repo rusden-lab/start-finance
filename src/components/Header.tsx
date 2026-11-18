@@ -44,8 +44,9 @@ export default function Header() {
           <Image
             src={dark ? "/assets/logo/start-finance-logo-white.svg" : "/assets/logo/start-finance-logo-black.svg"}
             alt="Start Finance"
-            width={132}
-            height={34}
+            width={176}
+            height={45}
+            className="h-9 w-auto sm:h-11"
             priority
           />
         </Link>

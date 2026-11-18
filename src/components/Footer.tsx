@@ -23,7 +23,7 @@ export default function Footer() {
     <footer className="bg-ink text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <Image src="/assets/logo/start-finance-logo-white.svg" alt="Start Finance" width={140} height={36} />
+          <Image src="/assets/logo/start-finance-logo-white.svg" alt="Start Finance" width={176} height={45} className="h-11 w-auto" />
           <p className="mt-4 max-w-sm text-sm text-white/70">
             Melbourne-based mortgage and finance brokers. Home loans, refinancing, investment, business, car and
             personal loans – anyone can Start Finance.

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import PromoBanner, { promoLive } from "@/components/PromoBanner";
 import Motion from "@/components/Motion";
 import { site } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 
 const syne = localFont({
   src: "../../public/fonts/syne-variable-latin.woff2",
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <Footer />
         <Motion />
+        <Analytics />
       </body>
     </html>
   );
